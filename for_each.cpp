@@ -22,7 +22,7 @@ public:
     myVector.assign(vect.begin(), vect.end());
   }
   ~Vector() {
-    while(myVector.empty()){
+    while(!myVector.empty()){
       myVector.pop_back();
     }
   }
