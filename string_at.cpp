@@ -56,6 +56,8 @@ private:
   ENDL Endl;
 };
 
+typedef shared_ptr <MyString> MyStringPtr;
+
 int main() {
   string TEXT("C++ Strings");
 
@@ -66,7 +68,7 @@ int main() {
   stringObj1.appString(" 'at' function for safe & controlled access");
   stringObj1.print2();
 
-  shared_ptr <MyString> ObjPtr( new MyString("Shared_ptr auto mem management") );
+  MyStringPtr ObjPtr( new MyString("Shared_ptr auto mem management") );
   ObjPtr->print3();
 
   string CPP = stringObj1.getString(0, 3);  // Cut C++ string from TEXT string
