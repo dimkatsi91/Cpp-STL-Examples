@@ -42,6 +42,15 @@ public:
   string getString(int name_idx, int name_length) {
     return str.substr(name_idx, name_length);
   }
+  /* find() and replace defs */
+  /* Replace char1 with char2 character */
+  void rep(const char* oldchar, const char* newchar) {
+    size_t pos = str.find(oldchar);
+    while(pos != string::npos) {
+      str.replace(pos, 1, newchar);
+      pos = str.find(oldchar, pos++);
+    }
+  }
 private:
   string str;
   ENDL Endl;
@@ -60,8 +69,11 @@ int main() {
   shared_ptr <MyString> ObjPtr( new MyString("Shared_ptr auto mem management") );
   ObjPtr->print3();
 
-  string CPP = stringObj1.getString(0, 3);  // Cut C++ string from TEXT string 
+  string CPP = stringObj1.getString(0, 3);  // Cut C++ string from TEXT string
   cout << CPP << "\n";
+
+  stringObj1.rep(" ", "@");
+  stringObj1.print3();
 
   return 0;
 }
