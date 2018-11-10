@@ -6,10 +6,11 @@ typedef shared_ptr<Person<int, double, double>> PersonPtr;
 typedef Person<int, double, double> PersonType1;
 
 int main() {
-  /*
-     Person<int, double, double> *pPtr = new Person<int, double, double>("diman77", "katsi", 27, 80.0, 178.78);
-     cout << *pPtr;
-  */
+    /*  
+     PersonType1 *pPtr0 = new PersonType1("diman77", "katsi", 27, 80.0, 178.78);
+     cout << *pPtr0;
+     delete pPtr0;
+     */
 
   /* ----------------- */
   PersonPtr pPtr( new PersonType1("Barack", "Obama", 57, 85, 185.85) );
