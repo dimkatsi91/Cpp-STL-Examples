@@ -31,7 +31,7 @@ public:
           int newChoice;
           std::cout << "Please enter 0 | 1 --> PUSH_FRONT | PUSH_BACK:\n";
           std::cin >> newChoice;
-          pushElem(val, newChoice);
+          pushElem(val, newChoice);   // replace while with recursion 
           break;
         }
   }
