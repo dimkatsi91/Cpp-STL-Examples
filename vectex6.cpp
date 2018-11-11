@@ -10,6 +10,7 @@ class MyVector{
     friend std::ostream& operator<<( std::ostream& , const MyVector<U>& );
 public:
   explicit MyVector(T N) {
+    vect.reserve(2*N);    // Reserve capacity 2N for vect vector  
     for(T i=0;i<N;i++)
       vect.push_back(i+1);
   }
@@ -24,7 +25,7 @@ public:
   void delEven() {
     typename vector<T>::iterator it=vect.begin();
     while(it!=vect.end())
-      if(*it%2==0) 
+      if(*it%2==0)
         it = vect.erase(it);
       else
         ++it;
