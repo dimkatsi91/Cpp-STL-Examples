@@ -24,9 +24,7 @@ public:
   void delEven() {
     typename vector<T>::iterator it=vect.begin();
     while(it!=vect.end())
-      if(*it%2==0)
-
-
+      if(*it%2==0) 
         it = vect.erase(it);
       else
         ++it;
