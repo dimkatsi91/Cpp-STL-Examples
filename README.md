@@ -16,6 +16,8 @@
  
 > #### _Material_ ####
 
+* [C++ Notes for Professionals](https://books.goalkicker.com/CPlusPlusBook/ "Good Source")
+
 * [C++ Cookbook](https://www.amazon.com/Herb-Schildts-C-Programming-Cookbook/dp/007148860X "Book #0")
 
 * [C++ Forum](http://www.cplusplus.com/reference/stl/ "Site Material #1")
