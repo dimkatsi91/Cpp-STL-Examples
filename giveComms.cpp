@@ -37,13 +37,10 @@ public:
     void Rules() {
         Commands C1;
         /* Flush all iptables Netfilter rules for start */
-        cout << "Flush: \n";
         C1.run("sudo iptables -F");
         /* Accept ssh connection from 192.168.1.7 host machine */
-        cout << "Whitelist \n";
         C1.run("sudo iptables -I INPUT 1 -p tcp -s 192.168.1.7 --dport 22 -j ACCEPT");
         /* DROP | REJECT all other ssh attempts for conenction | REJECT better to send a message of rejection too */
-        cout << "Reject all else: \n";
         C1.run("sudo iptables -I INPUT 2 -p tcp --dport 22 -j REJECT");
     }
     void SaveV4Rules() {
