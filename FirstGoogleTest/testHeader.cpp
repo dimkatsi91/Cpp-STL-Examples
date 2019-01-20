@@ -20,18 +20,14 @@ TEST(FactTest, BigNumber) {
 	ASSERT_EQ(2432902008176640000, fact(20));
 }
 
-
-TEST(FiboTest, find5FiboNums) {
-	FIBO F(5);
+TEST(FiboTest, findFiboNums) {
+	FIBO F(10);
 	F.find_fibo();
-	ASSERT_EQ(0, F.get_fibo_nums(0));
-	ASSERT_EQ(1, F.get_fibo_nums(1));
-	ASSERT_EQ(1, F.get_fibo_nums(2));
-	ASSERT_EQ(2, F.get_fibo_nums(3));
-	ASSERT_EQ(3, F.get_fibo_nums(4));
+	vector<int> correct={0, 1, 1, 2, 3, 5, 8, 13, 21, 34};
+	for(size_t i=0; i<10; i++) {
+			ASSERT_EQ(correct[i], F.get_fibo_nums(i));
+	}
 }
-
-
 
 int main(int argc, char** argv) {
 	testing::InitGoogleTest(&argc, argv);
