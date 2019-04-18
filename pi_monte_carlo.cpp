@@ -22,7 +22,9 @@ public:
   void monte_carlo() {
 	
 	/* N_in represents the points that fall inside quarter of the circle
-	   N represents the iterations for approximation minimum error 
+	   N represents the iterations for approximation minimum error
+	   Dividing by total number N essentially I normalize the distribution
+	   Multiplying with 4 comes from the circle quarter usage 
 	*/
 	int N, N_in = 0;			
 	cout << "Please enter iterations: ";
