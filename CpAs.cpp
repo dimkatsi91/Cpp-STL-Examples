@@ -1,8 +1,11 @@
 #include <iostream>
+#include <string>
+#include <sstream>
 
 using std::cout;
 using std::endl;
 using std::string;
+using std::stringstream;
 
 class MyClass {
 public:
@@ -15,8 +18,12 @@ public:
     name = rhs.name;
     return *this;
   }
-  void talk() const {
-    cout << "Hello, my name is " << name << "!\n";
+  void talk(std::ostream& out) const {
+
+    out << "Hello, my name is " << name << "!\n";
+  }
+  operator const char* () const {
+	  return name.c_str();
   }
 private:
   string name;
@@ -27,12 +34,14 @@ int main() {
   /* ------------------------------------- */
   MyClass Dimos("Dimos");
   MyClass diman = Dimos;  //copy constructor
-  Dimos.talk();
+  Dimos.talk(cout);
+
+  cout << "Using operator () to print name: " << (const char*) diman << endl;
   /* ---------------------------------- */
-  MyClass Luciano("Luciano");
-  MyClass Giorgio("Giorgio");
-  Luciano = Giorgio;    //assignment operator 
-  Luciano.talk();
+  //MyClass Luciano("Luciano");
+  //MyClass Giorgio("Giorgio");
+  //Luciano = Giorgio;    //assignment operator
+  //Luciano.talk();
 
   return 0;
 }
