@@ -27,6 +27,22 @@ public:
   Complex<T1, T2> operator+( Complex<T1, T2>& Cplx ) {
     return Complex<T1, T2>(real+Cplx.real, imag+Cplx.imag);
   }
+  /* '*' overload */
+  Complex<T1, T2> operator*() {
+    return Complex<T1, T2>(this->real, -this->imag);   
+  }
+  /* '==' overload */
+  bool operator==(Complex<T1, T2> &Cplx) {
+    return real==Cplx.real && imag==Cplx.imag;
+  }
+  /* '!=' overload */
+  bool operator!=(Complex<T1, T2> &Cplx) {
+    return !(*this==Cplx);
+  }
+  /* '()' overload */
+  bool operator()(Complex<T1, T2> &Cplx) {
+    return (real==-Cplx.real && imag==-Cplx.imag);
+  }
 private:
   T1 real;
   T2 imag;
