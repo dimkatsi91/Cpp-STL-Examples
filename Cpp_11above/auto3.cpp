@@ -33,6 +33,11 @@ int main()
     
     Vector<std::string> v({"Olympiakos", "PAOK", "AEK", "Panathinaikos"});
     v.echo();
+    // output ::
+    // O l y m p i a k o s 
+    // P A O K 
+    // A E K 
+    // P a n a t h i n a i k o s 
 
     return 0;
 }
