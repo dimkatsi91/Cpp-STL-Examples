@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <typeinfo>
+//#include <typeinfo>
 
 using namespace std;
 
@@ -32,7 +32,7 @@ public:
     Bicycle(const Bicycle::Brands& b, const Bicycle::Colors& c, const string& s)
         : brand(Brands(b)), color(Colors(c)), model(s)
     {}
-    ~Bicycle() {}
+    ~Bicycle() { bike=0; }
     /* Member functions */
     auto info() -> void ;
     const string BrandName(Brands& );
@@ -104,6 +104,15 @@ int main()
 
     bike1.info();
     bike2.info();
+
+    /* Use a little bit STL vector class */
+    vector<string> PinarelloBikes{"Dogma F10", "Dogma FS", "Dogma K10", "GAN", "Prince FX"};
+    
+    for(auto &model : PinarelloBikes) {
+        Bicycle *pinarello = new Bicycle(Bicycle::Brands(1), Bicycle::Colors(1), model );
+        pinarello -> info();
+    }
+    
 
     return 0;
 }
