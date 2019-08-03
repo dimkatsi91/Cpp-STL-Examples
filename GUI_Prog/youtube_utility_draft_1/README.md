@@ -26,3 +26,12 @@
 * Beta version, will be updated frequently for more functionality | still a working project
 
 
+<h5>Example</h5>
+
+* The starting window is appearing as soon the Qt Run button is pressed :
+
+![Starting Window/Widget](https://github.com/dimkatsi91/Cpp-STL-Examples/blob/master/GUI_Prog/youtube_utility_draft_1/Photos/Start_Window.png)
+
+* Next, when the button 'Start Youtube-dl Utility' is pressed, the Main QDialog GUI is shown :
+
+![Youtube-dl Utility GUI](https://github.com/dimkatsi91/Cpp-STL-Examples/blob/master/GUI_Prog/youtube_utility_draft_1/Photos/The_Main_Dialog_Window.png)
