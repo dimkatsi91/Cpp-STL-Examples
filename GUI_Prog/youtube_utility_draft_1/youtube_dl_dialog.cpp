@@ -35,6 +35,7 @@ void Youtube_dl_Dialog::on_ok_pushButton_clicked()
     else {
         qDebug() << "[ FAILURE ] Navigating to the chosen path ... \n";
         QMessageBox::information(this, "ERROR!", "This directory does not exist!");
+        return;
     }
 
     // The return code when the command is executed | 0-> command is executed successfully
