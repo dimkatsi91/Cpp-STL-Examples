@@ -29,7 +29,7 @@ void Youtube_dl_Dialog::on_ok_pushButton_clicked()
     QString cmd_cd = "cd " + path_url;
 
     qDebug() << "Navigating to the choosed path " << path_url.toStdString().c_str() << " ... \n";
-    if(system(cmd_cd.toStdString().c_str())) {
+    if(!system(cmd_cd.toStdString().c_str())) {
         qDebug() << "[ DONE ] Navigating to the choosed path ... \n";
     }
     else {
