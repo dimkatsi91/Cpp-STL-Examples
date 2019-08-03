@@ -26,6 +26,15 @@ void Youtube_dl_Dialog::on_ok_pushButton_clicked()
     QString cmd_mp3 = "youtube-dl ";
     QString cmd_mkv = "youtube-dl ";
     QString option_audio = " --extract-audio --audio-format mp3 ";
+    QString cmd_cd = "cd " + path_url;
+
+    qDebug() << "Navigating to the choosed path " << path_url.toStdString().c_str() << " ... \n";
+    if(system(cmd_cd.toStdString().c_str())) {
+        qDebug() << "[ DONE ] Navigating to the choosed path ... \n";
+    }
+    else {
+        qDebug() << "[ FAILURE ] Navigating to the choosed path ... \n";
+    }
 
     // The return code when the command is executed | 0-> command is executed successfully
     // 1 --> Command failed to execute
