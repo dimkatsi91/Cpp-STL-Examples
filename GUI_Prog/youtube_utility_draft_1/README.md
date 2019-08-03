@@ -32,6 +32,12 @@
 
 ![Starting Window/Widget](https://github.com/dimkatsi91/Cpp-STL-Examples/blob/master/GUI_Prog/youtube_utility_draft_1/Photos/Start_Window.png)
 
-* Next, when the button 'Start Youtube-dl Utility' is pressed, the Main QDialog GUI is shown :
+** Next, when the button 'Start Youtube-dl Utility' is pressed, the Main QDialog GUI is shown :
+> OPTIONS:
+  - Provide the youtube url
+  - Provide the full path
+  - Enter mp3 || mkv download option
+  - Press OK
+  - If CANCEL button is pressed the QDialog window is closed and the main window is coming in ficus again to try again!
 
 ![Youtube-dl Utility GUI](https://github.com/dimkatsi91/Cpp-STL-Examples/blob/master/GUI_Prog/youtube_utility_draft_1/Photos/The_Main_Dialog_Window.png)
