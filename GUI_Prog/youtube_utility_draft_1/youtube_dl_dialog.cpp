@@ -44,6 +44,7 @@ void Youtube_dl_Dialog::on_ok_pushButton_clicked()
         qDebug() << "Exit procedure ... It seems you changed your mind!\n";
         QMessageBox::information(this, "EXIT", "Nothing to do!");
         accept();
+	return;
     }
 
     // If the url or the path is empty open a message box and display a message
