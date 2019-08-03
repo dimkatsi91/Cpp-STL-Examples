@@ -28,12 +28,13 @@ void Youtube_dl_Dialog::on_ok_pushButton_clicked()
     QString option_audio = " --extract-audio --audio-format mp3 ";
     QString cmd_cd = "cd " + path_url;
 
-    qDebug() << "Navigating to the choosed path " << path_url.toStdString().c_str() << " ... \n";
+    qDebug() << "Navigating to the chosen path " << path_url.toStdString().c_str() << " ... \n";
     if(!system(cmd_cd.toStdString().c_str())) {
-        qDebug() << "[ DONE ] Navigating to the choosed path ... \n";
+        qDebug() << "[ DONE ] Navigating to the chosen path ... \n";
     }
     else {
-        qDebug() << "[ FAILURE ] Navigating to the choosed path ... \n";
+        qDebug() << "[ FAILURE ] Navigating to the chosen path ... \n";
+        QMessageBox::information(this, "ERROR!", "This directory does not exist!");
     }
 
     // The return code when the command is executed | 0-> command is executed successfully
@@ -44,7 +45,7 @@ void Youtube_dl_Dialog::on_ok_pushButton_clicked()
         qDebug() << "Exit procedure ... It seems you changed your mind!\n";
         QMessageBox::information(this, "EXIT", "Nothing to do!");
         accept();
-	return;
+        return;
     }
 
     // If the url or the path is empty open a message box and display a message
