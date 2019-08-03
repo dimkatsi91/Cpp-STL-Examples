@@ -3,7 +3,7 @@
 
 #include <QDialog>
 
-#include <QDebug>
+#include <QDebug>    // for debug messages diaplyed in the Qt Creator console
 #include <stdlib.h> // system() function
 
 namespace Ui {
@@ -27,6 +27,9 @@ private:
     // Let us define a string for storing the entered youtube url
     // from the user that will be used by the line edit widget
     QString youtube_url;
+    // Let us also define a string QString actually, that will capture
+    // the path that the user will enter in order to save his url song or whatever !
+    QString path_url;
     Ui::Youtube_dl_Dialog *ui;
 };
 

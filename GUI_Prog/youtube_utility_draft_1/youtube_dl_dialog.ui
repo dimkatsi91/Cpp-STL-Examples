@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>583</width>
-    <height>347</height>
+    <width>604</width>
+    <height>422</height>
    </rect>
   </property>
   <property name="font">
@@ -53,7 +53,7 @@
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>160</y>
+     <y>240</y>
      <width>159</width>
      <height>171</height>
     </rect>
@@ -88,8 +88,8 @@
   <widget class="QPushButton" name="ok_pushButton">
    <property name="geometry">
     <rect>
-     <x>360</x>
-     <y>190</y>
+     <x>310</x>
+     <y>290</y>
      <width>89</width>
      <height>25</height>
     </rect>
@@ -101,8 +101,8 @@
   <widget class="QPushButton" name="cancel_pushButton">
    <property name="geometry">
     <rect>
-     <x>360</x>
-     <y>250</y>
+     <x>310</x>
+     <y>350</y>
      <width>89</width>
      <height>25</height>
     </rect>
@@ -116,7 +116,7 @@
     <rect>
      <x>40</x>
      <y>90</y>
-     <width>181</width>
+     <width>191</width>
      <height>51</height>
     </rect>
    </property>
@@ -130,6 +130,29 @@
      <x>240</x>
      <y>100</y>
      <width>331</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="path_label">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>180</y>
+     <width>201</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Please enter the save path :</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="path_liner">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>180</y>
+     <width>311</width>
      <height>25</height>
     </rect>
    </property>
