@@ -3,8 +3,9 @@
 
 #include <QDialog>
 
-#include <QDebug>    // for debug messages diaplyed in the Qt Creator console
-#include <stdlib.h> // system() function
+#include <QDebug>             // for debug messages diaplyed in the Qt Creator console
+#include <QMessageBox>       //  Message boxes
+#include <stdlib.h>         // system() function
 
 namespace Ui {
 class Youtube_dl_Dialog;

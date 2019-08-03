@@ -42,7 +42,17 @@ void Youtube_dl_Dialog::on_ok_pushButton_clicked()
 
     if(ui->exit_radioButton->isChecked()) {
         qDebug() << "Exit procedure ... It seems you changed your mind!\n";
+        QMessageBox::information(this, "EXIT", "Nothing to do!");
         accept();
+    }
+
+    // If the url or the path is empty open a message box and display a message
+    if(youtube_url.isEmpty()) {
+        QMessageBox::information(this, "FAILURE", "Youtube URL should not be empty!");
+    }
+
+    if(path_url.isEmpty()) {
+        QMessageBox::information(this, "FAILURE", "Path should not be empty!");
     }
 
     // Next, if youtube url && saved path string are not empty, then proceed
