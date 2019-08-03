@@ -1,0 +1,33 @@
+#ifndef YOUTUBE_DL_DIALOG_H
+#define YOUTUBE_DL_DIALOG_H
+
+#include <QDialog>
+
+#include <QDebug>
+#include <stdlib.h> // system() function
+
+namespace Ui {
+class Youtube_dl_Dialog;
+}
+
+class Youtube_dl_Dialog : public QDialog
+{
+    Q_OBJECT
+
+public:
+    explicit Youtube_dl_Dialog(QWidget *parent = nullptr);
+    ~Youtube_dl_Dialog();
+
+private slots:
+    void on_ok_pushButton_clicked();
+
+    void on_cancel_pushButton_clicked();
+
+private:
+    // Let us define a string for storing the entered youtube url
+    // from the user that will be used by the line edit widget
+    QString youtube_url;
+    Ui::Youtube_dl_Dialog *ui;
+};
+
+#endif // YOUTUBE_DL_DIALOG_H
