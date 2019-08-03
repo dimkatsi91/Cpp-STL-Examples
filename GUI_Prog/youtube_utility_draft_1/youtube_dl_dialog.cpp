@@ -66,6 +66,8 @@ void Youtube_dl_Dialog::on_ok_pushButton_clicked()
         if(ui->mp3_radioButton->isChecked()) {
             // Download the youtube-url in mp3 format
             cmd_mp3 = cmd_mp3 + option_audio + youtube_url;
+            // Naviaate to the provided path && perform url download
+            cmd_mp3 = cmd_cd + " && " + cmd_mp3;
             return_code = system(cmd_mp3.toStdString().c_str());
             if(return_code==0) {
                 // Concole information prit-out
@@ -77,6 +79,8 @@ void Youtube_dl_Dialog::on_ok_pushButton_clicked()
         // Action II :: download mkv | video format
         if(ui->video_radioButton->isChecked()) {
             cmd_mkv += youtube_url;
+            // Navigate to the provided path and perform youtube video download
+            cmd_mkv = cmd_cd + " && " + cmd_mkv;
             return_code = system(cmd_mkv.toStdString().c_str());
             if(return_code==0) {
                 qDebug() << "Download the video SUCCESS!\n";
