@@ -6,6 +6,12 @@ Youtube_dl_Dialog::Youtube_dl_Dialog(QWidget *parent) :
     ui(new Ui::Youtube_dl_Dialog)
 {
     ui->setupUi(this);
+
+    // Create a QPixMap Object | You have to specify your logo image path here
+    QPixmap pix("/home/diman91/Documents/QT_Creator/youtube_utility_draft_1/beta_logo.jpg");
+    int width = ui->label_beta->width();
+    int height = ui->label_beta->height();
+    ui->label_beta->setPixmap(pix.scaled(width, height, Qt::KeepAspectRatio));
 }
 
 Youtube_dl_Dialog::~Youtube_dl_Dialog()

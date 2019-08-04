@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>572</width>
-    <height>382</height>
+    <width>558</width>
+    <height>374</height>
    </rect>
   </property>
   <property name="font">
@@ -61,7 +61,7 @@
   <widget class="QPushButton" name="ok_pushButton">
    <property name="geometry">
     <rect>
-     <x>280</x>
+     <x>240</x>
      <y>210</y>
      <width>89</width>
      <height>21</height>
@@ -74,7 +74,7 @@
   <widget class="QPushButton" name="cancel_pushButton">
    <property name="geometry">
     <rect>
-     <x>280</x>
+     <x>240</x>
      <y>290</y>
      <width>89</width>
      <height>21</height>
@@ -133,7 +133,7 @@
   <widget class="QPushButton" name="info_button">
    <property name="geometry">
     <rect>
-     <x>280</x>
+     <x>240</x>
      <y>250</y>
      <width>89</width>
      <height>21</height>
@@ -141,6 +141,19 @@
    </property>
    <property name="text">
     <string>INFO</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_beta">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>300</y>
+     <width>91</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>

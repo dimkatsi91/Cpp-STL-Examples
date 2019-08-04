@@ -5,7 +5,8 @@
 
 #include <QDebug>             // for debug messages diaplyed in the Qt Creator console
 #include <QMessageBox>       //  Message boxes
-#include <stdlib.h>         // system() function
+#include <stdlib.h>         //   system() function
+#include <QPixmap>         //    for the beta version logo
 
 namespace Ui {
 class Youtube_dl_Dialog;
