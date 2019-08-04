@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>604</width>
-    <height>422</height>
+    <width>578</width>
+    <height>375</height>
    </rect>
   </property>
   <property name="font">
@@ -20,40 +20,13 @@
    <enum>Qt::NoFocus</enum>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>YOUTUBE-DL UTILITY</string>
   </property>
-  <widget class="QLabel" name="header_label">
-   <property name="geometry">
-    <rect>
-     <x>126</x>
-     <y>20</y>
-     <width>361</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Nimbus Mono L</family>
-     <pointsize>14</pointsize>
-     <weight>75</weight>
-     <italic>false</italic>
-     <bold>true</bold>
-     <underline>false</underline>
-     <stylestrategy>PreferAntialias</stylestrategy>
-    </font>
-   </property>
-   <property name="text">
-    <string>YOUTUBE-DL UTILITY</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
   <widget class="QGroupBox" name="options_groupBox">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>240</y>
+     <x>30</x>
+     <y>170</y>
      <width>159</width>
      <height>171</height>
     </rect>
@@ -88,8 +61,8 @@
   <widget class="QPushButton" name="ok_pushButton">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>290</y>
+     <x>290</x>
+     <y>230</y>
      <width>89</width>
      <height>25</height>
     </rect>
@@ -101,8 +74,8 @@
   <widget class="QPushButton" name="cancel_pushButton">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>350</y>
+     <x>290</x>
+     <y>290</y>
      <width>89</width>
      <height>25</height>
     </rect>
@@ -114,8 +87,8 @@
   <widget class="QLabel" name="youtube_url_label">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>90</y>
+     <x>20</x>
+     <y>20</y>
      <width>191</width>
      <height>51</height>
     </rect>
@@ -128,8 +101,8 @@
    <property name="geometry">
     <rect>
      <x>240</x>
-     <y>100</y>
-     <width>331</width>
+     <y>30</y>
+     <width>311</width>
      <height>25</height>
     </rect>
    </property>
@@ -137,8 +110,8 @@
   <widget class="QLabel" name="path_label">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>180</y>
+     <x>20</x>
+     <y>110</y>
      <width>201</width>
      <height>20</height>
     </rect>
@@ -150,8 +123,8 @@
   <widget class="QLineEdit" name="path_liner">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>180</y>
+     <x>240</x>
+     <y>110</y>
      <width>311</width>
      <height>25</height>
     </rect>

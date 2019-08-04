@@ -104,3 +104,10 @@ void Youtube_dl_Dialog::on_cancel_pushButton_clicked()
     qDebug() << "Cancel Button is pushed ... Aborting Youtube-dl GUI Utility ... \n";
     reject();
 }
+
+/* Print info about where this GUI is running using QProcess widget
+ * QString username = id -un
+ * QString hostname = hostname
+ * QString date     = date
+ */
+
