@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>558</width>
-    <height>374</height>
+    <width>559</width>
+    <height>328</height>
    </rect>
   </property>
   <property name="font">
@@ -26,7 +26,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>180</y>
+     <y>130</y>
      <width>159</width>
      <height>171</height>
     </rect>
@@ -61,8 +61,8 @@
   <widget class="QPushButton" name="ok_pushButton">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>210</y>
+     <x>220</x>
+     <y>170</y>
      <width>91</width>
      <height>21</height>
     </rect>
@@ -74,8 +74,8 @@
   <widget class="QPushButton" name="cancel_pushButton">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>290</y>
+     <x>220</x>
+     <y>250</y>
      <width>91</width>
      <height>21</height>
     </rect>
@@ -88,7 +88,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>30</y>
+     <y>20</y>
      <width>191</width>
      <height>51</height>
     </rect>
@@ -101,7 +101,7 @@
    <property name="geometry">
     <rect>
      <x>240</x>
-     <y>40</y>
+     <y>30</y>
      <width>311</width>
      <height>25</height>
     </rect>
@@ -111,7 +111,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>120</y>
+     <y>80</y>
      <width>201</width>
      <height>20</height>
     </rect>
@@ -124,7 +124,7 @@
    <property name="geometry">
     <rect>
      <x>240</x>
-     <y>120</y>
+     <y>80</y>
      <width>311</width>
      <height>25</height>
     </rect>
@@ -133,8 +133,8 @@
   <widget class="QPushButton" name="info_button">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>250</y>
+     <x>220</x>
+     <y>210</y>
      <width>91</width>
      <height>21</height>
     </rect>
@@ -147,13 +147,68 @@
    <property name="geometry">
     <rect>
      <x>460</x>
-     <y>300</y>
+     <y>260</y>
      <width>91</width>
-     <height>71</height>
+     <height>61</height>
     </rect>
    </property>
    <property name="text">
     <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="system_label">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>160</y>
+     <width>131</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>8</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Plain</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::PlainText</enum>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>130</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>System Info</string>
    </property>
   </widget>
  </widget>

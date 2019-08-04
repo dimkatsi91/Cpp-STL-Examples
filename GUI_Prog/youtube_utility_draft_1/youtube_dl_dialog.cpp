@@ -33,6 +33,38 @@ Youtube_dl_Dialog::Youtube_dl_Dialog(QWidget *parent) :
     int width = ui->label_beta->width();
     int height = ui->label_beta->height();
     ui->label_beta->setPixmap(pix.scaled(width, height, Qt::KeepAspectRatio));
+
+    // Create a QProcess Object to capture the output of Linux commands
+    /* Print info about where this GUI is running using QProcess widget
+     * QString username = id -un
+     * QString hostname = hostname
+     * QString date     = date
+    */
+    QProcess id, date, hostname, time;
+    QString id_output, date_output, hostname_output; //time_output;
+    QString AIO;
+    id.start("id -un");     // SAME AS id.start("id", QStringList << "-un");
+    id.waitForFinished();
+    id_output = id.readAllStandardOutput();
+    //qDebug() << id_output << endl;
+
+    date.start("date +%Y/%m/%d");
+    date.waitForFinished();
+    date_output = date.readAllStandardOutput();
+
+    hostname.start("hostname");
+    hostname.waitForFinished();
+    hostname_output = hostname.readAllStandardOutput();
+
+    //time.start("date +%H:%M:%S");
+    //time.waitForFinished();
+    //time_output = time.readAllStandardOutput();
+
+    // Output all this info to the system_label
+    //AIO = "HOST: " + hostname_output + "USER: " + id_output + "\nDATE: " + date_output + "\nTime: " + time_output;
+    //AIO = "DATE : " + date_output + "\nTIME : " + time_output;
+    AIO = "HOST : " + hostname_output + "\nUSER : " + id_output + "\nDATE : " + date_output;
+    ui->system_label->setText(AIO);
 }
 
 Youtube_dl_Dialog::~Youtube_dl_Dialog()
@@ -136,14 +168,7 @@ void Youtube_dl_Dialog::on_cancel_pushButton_clicked()
     reject();
 }
 
-/* Print info about where this GUI is running using QProcess widget
- * QString username = id -un
- * QString hostname = hostname
- * QString date     = date
- */
-
-
 void Youtube_dl_Dialog::on_info_button_clicked()
 {
-    QMessageBox::information(this, "INFO", "This is a simple Youtube-dl GUI to help You download a url in music or video format!\nEnter url, path, choose format and press PROCEED!");
+    QMessageBox::information(this, "INFO", "This is a simple Youtube-dl GUI to help You download a url in music or video format!\nEnter url, path, choose format and press PROCEED");
 }

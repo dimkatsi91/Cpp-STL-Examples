@@ -3,10 +3,11 @@
 
 #include <QDialog>
 
-#include <QDebug>             // for debug messages diaplyed in the Qt Creator console
-#include <QMessageBox>       //  Message boxes
-#include <stdlib.h>         //   system() function
-#include <QPixmap>         //    for the beta version logo
+#include <QDebug>             // For debug messages diaplyed in the Qt Creator console
+#include <QMessageBox>       //  For Message boxes
+#include <stdlib.h>         //   For system() function
+#include <QPixmap>         //    For the beta version image logo
+#include <QProcess>       //     For the left upper label information label | to be filled by this Object functions
 
 namespace Ui {
 class Youtube_dl_Dialog;
