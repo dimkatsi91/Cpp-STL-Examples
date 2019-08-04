@@ -25,7 +25,7 @@
   <widget class="QGroupBox" name="options_groupBox">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>20</x>
      <y>180</y>
      <width>159</width>
      <height>171</height>
@@ -38,14 +38,14 @@
     <item>
      <widget class="QRadioButton" name="mp3_radioButton">
       <property name="text">
-       <string>Download mp3</string>
+       <string>mp3</string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QRadioButton" name="video_radioButton">
       <property name="text">
-       <string>Download mkv</string>
+       <string>mkv</string>
       </property>
      </widget>
     </item>
@@ -63,12 +63,12 @@
     <rect>
      <x>240</x>
      <y>210</y>
-     <width>89</width>
+     <width>91</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>OK</string>
+    <string>PROCEED</string>
    </property>
   </widget>
   <widget class="QPushButton" name="cancel_pushButton">
@@ -76,7 +76,7 @@
     <rect>
      <x>240</x>
      <y>290</y>
-     <width>89</width>
+     <width>91</width>
      <height>21</height>
     </rect>
    </property>
@@ -135,7 +135,7 @@
     <rect>
      <x>240</x>
      <y>250</y>
-     <width>89</width>
+     <width>91</width>
      <height>21</height>
     </rect>
    </property>

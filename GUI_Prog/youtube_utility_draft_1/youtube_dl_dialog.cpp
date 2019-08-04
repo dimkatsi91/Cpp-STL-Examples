@@ -7,6 +7,27 @@ Youtube_dl_Dialog::Youtube_dl_Dialog(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    // Set colors for elements
+    /* Configure them based on your visual appealings
+    QPalette blue, black, cyan;
+    labels.setColor(QPalette::Window, Qt::white);     // background color
+    blue.setColor(QPalette::WindowText, Qt::blue);     // blue text color
+    black.setColor(QPalette::WindowText, Qt::black);  // black text color
+    cyan.setColor(QPalette::WindowText, Qt::cyan);  // red text color
+
+    // youtube_url_label
+    ui->youtube_url_label->setPalette(blue);
+    // path_label
+    ui->path_label->setPalette(blue);
+    // Groupbox
+    ui->options_groupBox->setPalette(blue);
+    // Radio buttons
+    ui->mp3_radioButton->setPalette(black);
+    ui->video_radioButton->setPalette(black);
+    ui->exit_radioButton->setPalette(cyan);
+    ui->cancel_pushButton->setPalette(cyan);
+    */
+
     // Create a QPixMap Object | You have to specify your logo image path here
     QPixmap pix("/home/diman91/Documents/QT_Creator/youtube_utility_draft_1/beta_logo.jpg");
     int width = ui->label_beta->width();
