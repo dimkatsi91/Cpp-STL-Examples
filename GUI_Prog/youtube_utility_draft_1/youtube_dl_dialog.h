@@ -24,6 +24,8 @@ private slots:
 
     void on_cancel_pushButton_clicked();
 
+    void on_info_button_clicked();
+
 private:
     // Let us define a string for storing the entered youtube url
     // from the user that will be used by the line edit widget
@@ -31,6 +33,7 @@ private:
     // Let us also define a string QString actually, that will capture
     // the path that the user will enter in order to save his url song or whatever !
     QString path_url;
+    QTimer *timer;
     Ui::Youtube_dl_Dialog *ui;
 };
 

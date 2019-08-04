@@ -29,9 +29,9 @@ void Widget::on_starter_button_clicked()
     // Becuase our dialog returns success ( accept() ) or failure ( reject() )
     int ret = dialog -> exec();
     if(ret == QDialog::Accepted) {
-        qDebug() << "The main Youtube-dl GUI Utility is accepted!\n";
+        qDebug() << "The main Youtube-dl GUI Utility is completed successfully!\n";
     }
     else if(ret == QDialog::Rejected) {
-        qDebug() << "The main Youtube-dl GUI Utility is rejected!\n";
+        qDebug() << "The main Youtube-dl GUI Utility is completed unsuccessfully!\n";
     }
 }

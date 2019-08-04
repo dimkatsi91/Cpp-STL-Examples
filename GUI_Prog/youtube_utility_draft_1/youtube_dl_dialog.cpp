@@ -72,8 +72,10 @@ void Youtube_dl_Dialog::on_ok_pushButton_clicked()
             if(return_code==0) {
                 // Concole information prit-out
                 qDebug() << "Download the mp3 SUCCESS!\n";
+                QMessageBox::information(this, "INFO", "Song download completed!");
             } else {
                 qDebug() << "Download the mp3 FAILED!\n";
+                QMessageBox::information(this, "WARN", "Song download failed!");
             }
         }
         // Action II :: download mkv | video format
@@ -84,9 +86,11 @@ void Youtube_dl_Dialog::on_ok_pushButton_clicked()
             return_code = system(cmd_mkv.toStdString().c_str());
             if(return_code==0) {
                 qDebug() << "Download the video SUCCESS!\n";
+                QMessageBox::information(this, "INFO", "Video download completed!");
             }
             else {
                 qDebug() << "Download the video FAILED!\n";
+                QMessageBox::information(this, "WARN", "Video download failed!");
             }
         }
         if(ui->exit_radioButton->isChecked()) {
@@ -111,3 +115,8 @@ void Youtube_dl_Dialog::on_cancel_pushButton_clicked()
  * QString date     = date
  */
 
+
+void Youtube_dl_Dialog::on_info_button_clicked()
+{
+    QMessageBox::information(this, "INFO", "This is a simple Youtube-dl GUI to help You download a url in music or video format!\nEnter url, path, choose format and press OK");
+}
