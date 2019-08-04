@@ -145,5 +145,5 @@ void Youtube_dl_Dialog::on_cancel_pushButton_clicked()
 
 void Youtube_dl_Dialog::on_info_button_clicked()
 {
-    QMessageBox::information(this, "INFO", "This is a simple Youtube-dl GUI to help You download a url in music or video format!\nEnter url, path, choose format and press OK");
+    QMessageBox::information(this, "INFO", "This is a simple Youtube-dl GUI to help You download a url in music or video format!\nEnter url, path, choose format and press PROCEED!");
 }

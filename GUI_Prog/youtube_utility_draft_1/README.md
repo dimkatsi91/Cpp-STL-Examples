@@ -37,7 +37,7 @@
   - Provide the youtube url
   - Provide the full path
   - Enter mp3 || mkv download option
-  - Press OK
+  - Press PROCEED
   - If CANCEL button is pressed the QDialog window is closed and the main window is coming in ficus again to try again!
   - If INFO button is pressed a QMessage window appears with a small usage message.
   - If a path is not entered, then a Message Window appears and You should start again the application.
