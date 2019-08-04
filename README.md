@@ -25,3 +25,8 @@
 * [Tutorials Point C++ STL](https://www.tutorialspoint.com/cplusplus/cpp_stl_tutorial.htm "Site Material #0")
 
 * [Professional C++](https://www.amazon.com/Professional-C-Marc-Gregoire/dp/1119421306 "Book #1")
+
+* [Qt Creator Documentation](https://doc.qt.io/ "Everything")
+
+* [ Qt Creator C++ Documentation](https://doc.qt.io/qt-5/qtgui-module.html "Qt (Cute) C++ Documentation")
+
