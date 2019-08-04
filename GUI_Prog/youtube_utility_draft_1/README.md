@@ -21,7 +21,7 @@
 * Linux | Mostly Debian-based Distros
 * ffmpeg or similar utility needs to be installed for the mp3 download option
 * youtube-dl program needs to be installed
-* Qt Creator 4.9.2 is recommended to bi installed in order to open this GUI
+* Qt Creator 4.9.2 is recommended to be installed in order to open this GUI
 * After opening the main GUI window select the button in order to start the QDialog regarding Youtube-dl GUI
 * Beta version, will be updated frequently for more functionality | still a working project
 
