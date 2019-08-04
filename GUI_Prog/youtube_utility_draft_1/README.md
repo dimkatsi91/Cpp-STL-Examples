@@ -39,7 +39,8 @@
   - Enter mp3 || mkv download option
   - Press OK
   - If CANCEL button is pressed the QDialog window is closed and the main window is coming in ficus again to try again!
-  - If a path is not entered, then a Message Window appears and You should start again the application
+  - If INFO button is pressed a QMessage window appears with a small usage message.
+  - If a path is not entered, then a Message Window appears and You should start again the application.
   - If a url is not entered, then a Message Window appears and You should start again the application too!
   - If the provided path does not exist, a Messsage Error Window appears & You should provide a valid path to try again!
 
