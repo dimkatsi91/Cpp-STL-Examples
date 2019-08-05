@@ -17,6 +17,8 @@ public:
 
 private:
     Ui::Group_management *ui;
+    // A QString object/string variable for the storage of the entered groupname from the group_lineEdit
+    QString groupname;
 };
 
 #endif // GROUP_MANAGEMENT_H
