@@ -25,6 +25,18 @@ public:
 
     QString getCurrentUsername();
 
+    bool add_the_user(QString &);
+
+    bool del_the_user(QString &);
+
+    bool mod_the_user(QString &);
+
+    bool shell_change(QString &, QString &);
+
+    bool passwd_change(QString &, QString &);
+
+    void cat_users(void);
+
 private slots:
     void on_user_exit_pushButton_clicked();
 
