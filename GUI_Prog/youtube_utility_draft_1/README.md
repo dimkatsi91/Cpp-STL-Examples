@@ -14,7 +14,7 @@
 
 -------------------------------------------------------------------------------------------------------------------------------
 
-> #### Information ####
+> #### __Information__ ####
 
 <h5> This GUI is supported under next prerequisites :</h5>
 
@@ -26,14 +26,14 @@
 * Beta version, will be updated frequently for more functionality | still a working project
 
 
-<h5>Example</h5>
+- [x] Example
 
 * The starting window is appearing as soon the Qt Run button is pressed :
 
 ![Starting Window/Widget](https://github.com/dimkatsi91/Cpp-STL-Examples/blob/master/GUI_Prog/youtube_utility_draft_1/Photos/Start_Window.png)
 
 <h7> Next, when the button 'Start Youtube-dl Utility' is pressed, the Main QDialog GUI is shown : </h7>
-> OPTIONS
+- [x] OPTIONS/SCENARIOS
   - Provide the youtube url
   - Provide the full path
   - Enter mp3 || mkv download option
