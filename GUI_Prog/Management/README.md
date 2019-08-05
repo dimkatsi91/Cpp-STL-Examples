@@ -41,3 +41,4 @@
 ![Group Management Utility](https://github.com/dimkatsi91/Cpp-STL-Examples/blob/master/GUI_Prog/Management/images/group_dialog.png)
 
  
+- [x] Not yet ready to run properly | 2019, August 05 | Will be implemented soon enough !
