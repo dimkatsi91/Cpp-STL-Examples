@@ -42,3 +42,4 @@
 
  
 - [x] Not yet ready to run properly | 2019, August 05 | Will be implemented soon enough !
+- [x] Update v1.0.2 :: Added the creation of a new User Functionality
