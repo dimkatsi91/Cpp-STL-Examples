@@ -25,6 +25,8 @@ public:
 
     QString getCurrentUsername();
 
+    bool create_user_home(QString &);
+
     bool add_the_user(QString &);
 
     bool del_the_user(QString &);
@@ -46,6 +48,7 @@ private:
     Ui::User_management *ui;
     // This is a global string variable for the entered username in the username lineEdit
     QString username;
+    QString user_password;  // needed for all sudo user commands
 };
 
 #endif // USER_MANAGEMENT_H

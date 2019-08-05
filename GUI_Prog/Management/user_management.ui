@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>100</y>
+     <y>120</y>
      <width>231</width>
      <height>221</height>
     </rect>
@@ -25,7 +25,7 @@
    <property name="title">
     <string>OPTIONS</string>
    </property>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -84,7 +84,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>40</y>
+     <y>10</y>
      <width>181</width>
      <height>31</height>
     </rect>
@@ -97,7 +97,7 @@
    <property name="geometry">
     <rect>
      <x>230</x>
-     <y>40</y>
+     <y>10</y>
      <width>151</width>
      <height>25</height>
     </rect>
@@ -107,7 +107,7 @@
    <property name="geometry">
     <rect>
      <x>340</x>
-     <y>140</y>
+     <y>180</y>
      <width>131</width>
      <height>51</height>
     </rect>
@@ -120,13 +120,36 @@
    <property name="geometry">
     <rect>
      <x>340</x>
-     <y>230</y>
+     <y>270</y>
      <width>131</width>
      <height>51</height>
     </rect>
    </property>
    <property name="text">
     <string>EXIT</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>60</y>
+     <width>211</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Please enter user password :</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="user_password_lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>60</y>
+     <width>151</width>
+     <height>25</height>
+    </rect>
    </property>
   </widget>
  </widget>

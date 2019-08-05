@@ -24,6 +24,15 @@ bool User_management::validate_username()
     username = ui->username_lineEdit->text();
     qDebug() << "Entered username is : " << username.toStdString().c_str() << "\n";
 
+    // Pre-processing Step #0 : Check if an id exists in the system ::
+    QProcess check_id_proc;
+    check_id_proc.start("grep " + username + " /etc/passwd");
+    if(check_id_proc.exitCode()==0) {
+        qDebug() << "This user already exists in the system!\n";
+        QMessageBox::information(this, "ERROR", "This user already exists in the system!\n");
+        return false;
+    }
+
     // First check if the username QString is empty | Should not be empty of course !
     if(username.isEmpty()) {
         QMessageBox::information(this, "ERROR", "The username should not be empty!");
@@ -39,7 +48,7 @@ bool User_management::validate_username()
     current_username.remove("\n");
     // Push the output to the vector of invalid_username strings || Exaclty the same as STL || Qt is Cute !
     invalid_names.push_back(current_username);
-    qDebug() << "Command id -un returns the username : " << current_username;
+    //qDebug() << "Command id -un returns the username : " << current_username;
 
     for(auto &invalid_username : invalid_names) {
         if(username==invalid_username) {
@@ -71,17 +80,51 @@ QString User_management::getCurrentUsername()
     return logged_user_proc.readAllStandardOutput();
 }
 
+bool User_management::create_user_home(QString &user_name)
+{
+    // Create the home dir : /home/$user_name
+    QProcess mkdir_proc1, mkdir_proc2;
+    mkdir_proc1.setStandardOutputProcess(&mkdir_proc2);
+    mkdir_proc1.start("echo " + user_password);
+    mkdir_proc2.start("sudo -S mkdir /home/" + user_name);
+    mkdir_proc1.waitForFinished();
+    mkdir_proc2.waitForFinished();
+
+    // Give appropriate permissions
+    QProcess chmod_proc1, chmod_proc2, chown_proc1, chown_proc2;
+    chmod_proc1.setStandardOutputProcess(&chmod_proc2);
+    chmod_proc1.start("echo " + user_password);
+    chmod_proc2.start("sudo -S chmod -R u=rwx,g=rw,o=--- /home/" + user_name);
+    chmod_proc1.waitForFinished();
+    chmod_proc2.waitForFinished();
+
+    chown_proc1.setStandardOutputProcess(&chown_proc2);
+    chown_proc1.start("echo " + user_password);
+    chown_proc2.start("sudo -S chown " + user_name + " /home/" + user_name);
+    chown_proc1.waitForFinished();
+    chown_proc2.waitForFinished();
+
+    return true;
+}
+
 bool User_management::add_the_user(QString &user_name)
 {
+    // First call the create_user_home() function in order to create the home dir for the new user
+    if(create_user_home(user_name)==false) {
+        QMessageBox::information(this, "ERROR", "Could not create the home directory for user : " + user_name);
+        return false;
+    }
     // The same as usual ...
-    QProcess useradd_proc;
-    useradd_proc.start("useradd -s /bin/bash " + user_name + " && echo $?");
-    useradd_proc.waitForFinished();
-    qDebug() << "\n add_the_user() functions returned output code : " << useradd_proc.readAllStandardOutput() << "\n\n";
-    qDebug() << "\n add_the_user() functions returned error  code : " << useradd_proc.readAllStandardError() << "\n\n";
-    if(useradd_proc.readAllStandardOutput()=="0") {
+    QProcess useradd_proc1, useradd_proc2;
+    useradd_proc1.setStandardOutputProcess(&useradd_proc2);
+    useradd_proc1.start("echo " + user_password);
+    useradd_proc2.start("sudo -S useradd -s /bin/bash " + user_name);
+    useradd_proc1.waitForFinished();
+    useradd_proc2.waitForFinished();
+    if(useradd_proc2.exitCode()==0) {
         return true;
     }
+    qDebug() << "\n\n********** ERROR ret code != 0 \n\n";
     return false;
 }
 
@@ -124,6 +167,15 @@ void User_management::on_user_exit_pushButton_clicked()
 void User_management::on_user_proceed_pushButton_clicked()
 {
     qDebug() << "PROCEED button under User Management Utility was pushed. Proceeding ...\n";
+    // First of all, check for user password | These tools need user's own password to run sudo commands
+    // Otherwise, this tool is unable to run
+    user_password = ui->user_password_lineEdit->text();
+    if(user_password.isEmpty()) {
+        qDebug() << "Please provide " + username + " 's password!\nThese tools need superuser privileges!";
+        QMessageBox::information(this, "ERROR", "Please provide " + username + " 's password!\nThese tools need superuser privileges!");
+        return;
+    }
+
     if(validate_username()==false) {
         return;
     }
@@ -134,9 +186,9 @@ void User_management::on_user_proceed_pushButton_clicked()
         // Action 1 : Add a user using the useradd command :: Call the useradd function
         if(ui->useradd_radioButton->isChecked()) {
             if(add_the_user(username)==true) {
-                QMessageBox::information(this, "INFO", "New user named: " + username + " was created with success!\n");
+                QMessageBox::information(this, "INFO", "New user named : " + username + " was created with success!\n");
             } else {
-                QMessageBox::information(this, "ERROR", "Something went wrong during user: " + username + " creation!\n");
+                QMessageBox::information(this, "ERROR", "Something went wrong during user : " + username + " creation!\n");
             }
         }
         // Action 2 : Remove the user :: Call the del_the_user() function
