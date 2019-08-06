@@ -152,9 +152,17 @@ bool User_management::passwd_change(QString &user_name, QString &new_password)
     return false;
 }
 
-void User_management::cat_users(void)
+QString User_management::cat_users(void)
 {
-    // List all users
+    // Process to run a Linux command & capture all real Linux users
+    QProcess re_users;
+    re_users.start("bash", QStringList() << "-c" << "cut -d: -f1,3 /etc/passwd | egrep ':[0-9]{4}$' | cut -d: -f1");
+    if(!re_users.waitForFinished()) {
+        qDebug() << "Oops something went wrong when capturing all real Linux users ... The process is not finished!\n";
+        QMessageBox::warning(this, "WARN", "The Process to capture all Linux real users Failed!\n");
+    }
+    // Return the real human-like users
+    return re_users.readAllStandardOutput();
 }
 
 void User_management::on_user_exit_pushButton_clicked()
@@ -167,6 +175,12 @@ void User_management::on_user_exit_pushButton_clicked()
 void User_management::on_user_proceed_pushButton_clicked()
 {
     qDebug() << "PROCEED button under User Management Utility was pushed. Proceeding ...\n";
+    if(ui->list_users_radioButton->isChecked()) {
+        qDebug() << "Real System Users : \n";
+        QMessageBox::information(this, "Real users: ", cat_users());
+        return;
+    }
+
     // First of all, check for user password | These tools need user's own password to run sudo commands
     // Otherwise, this tool is unable to run
     user_password = ui->user_password_lineEdit->text();
@@ -200,6 +214,6 @@ void User_management::on_user_proceed_pushButton_clicked()
         // Action 5 : Change the user password : Call the passwd_user() function
 
         // Action 6 : List all system users : Real and system users included | I don't care
-
+        // This is implemented first of all, since no check needs to be done | It is just a cat action
     }
 }

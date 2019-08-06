@@ -37,7 +37,7 @@ public:
 
     bool passwd_change(QString &, QString &);
 
-    void cat_users(void);
+    QString cat_users(void);
 
 private slots:
     void on_user_exit_pushButton_clicked();
