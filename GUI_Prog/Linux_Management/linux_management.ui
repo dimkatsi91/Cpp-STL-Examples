@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Start Window</string>
+   <string>WELCOME</string>
   </property>
   <widget class="QPushButton" name="user_mgmnt_pushButton">
    <property name="geometry">

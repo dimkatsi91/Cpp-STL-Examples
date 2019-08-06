@@ -1,6 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>Group_Management</class>
- <widget name="Group_Management" class="QDialog">
+ <widget class="QDialog" name="Group_Management">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -10,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>GROUP MANAGEMENT UTILITY</string>
   </property>
  </widget>
  <resources/>

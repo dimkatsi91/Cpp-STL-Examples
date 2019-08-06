@@ -27,8 +27,10 @@ void Linux_Management::on_user_mgmnt_pushButton_clicked()
 {
     if(sanity_check()==false) {
         qDebug() << "Sanity check failed after pressing the user_mgmnt button...\n";
+        QMessageBox::warning(this, "WARNING", "The username or the password shall not be empty!\nPlease try again!");
         return;
     }
+    QMessageBox::information(this, "INFO", "Have in mind that your credentials will be used for next actions.If incorrect logout and login again!");
     User_management *user_mgmnt_dialog = new User_management(this);
     int ret_code = user_mgmnt_dialog->exec();
     if(ret_code==QDialog::Accepted) {
@@ -43,8 +45,10 @@ void Linux_Management::on_group_mgmnt_pushButton_clicked()
 {
     if(sanity_check()==false) {
         qDebug() << "Sanity check failed after pressing the group_mgmnt button...\n";
+        QMessageBox::warning(this, "WARNING", "The username or the password shall not be empty!\nPlease try again!");
         return;
     }
+    QMessageBox::information(this, "INFO", "Have in mind that your credentials will be used for next actions.If incorrect logout and login again!");
     // Open the group management Dialog Box, just like we did above for user management
     Group_Management *group_mgmnt_dialog = new Group_Management(this);
     int ret_code = group_mgmnt_dialog->exec();
