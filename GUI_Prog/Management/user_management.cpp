@@ -18,21 +18,26 @@ QString User_management::getUsername() const
     return username;
 }
 
+bool User_management::check_if_user_exists(QString &user_name)
+{
+    // Pre-processing Step #0 : Check if an id exists in the system ::
+    QProcess check_id_proc;
+    check_id_proc.start("id -un " + user_name);
+    check_id_proc.waitForFinished();
+    if(check_id_proc.exitCode()==0) {
+        qDebug() << "This user named: " + check_id_proc.readAllStandardOutput() + " already exists in the system!\n";
+        //QMessageBox::warning(this, "WARNING", "This user already exists in the system!\n");
+        return true;
+    }
+    // If the user does not exist, return false
+    return false;
+}
+
 bool User_management::validate_username()
 {
     // Capture the username from the username_lineEdit widget
     username = ui->username_lineEdit->text();
     qDebug() << "Entered username is : " << username.toStdString().c_str() << "\n";
-
-    // Pre-processing Step #0 : Check if an id exists in the system ::
-    QProcess check_id_proc;
-    check_id_proc.start("grep " + username + " /etc/passwd");
-    check_id_proc.waitForFinished();
-    if(check_id_proc.exitCode()==0) {
-        qDebug() << "This user named: " + check_id_proc.readAllStandardOutput() + " already exists in the system!\n";
-        QMessageBox::warning(this, "WARNING", "This user already exists in the system!\n");
-        return false;
-    }
 
     // First check if the username QString is empty | Should not be empty of course !
     if(username.isEmpty()) {
@@ -125,13 +130,43 @@ bool User_management::add_the_user(QString &user_name)
     if(useradd_proc2.exitCode()==0) {
         return true;
     }
-    qDebug() << "\n\n********** ERROR ret code != 0 \n\n";
+    qDebug() << "\n\n********** An ERROR occured during the creation of the new user: " + user_name + "\n";
     return false;
+}
+
+bool User_management::remove_user_home(QString &user_name)
+{
+    // Remove the home dir : /home/$user_name
+    QProcess rmdir_proc1, rmdir_proc2;
+    rmdir_proc1.setStandardOutputProcess(&rmdir_proc2);
+    rmdir_proc1.start("echo " + user_password);
+    rmdir_proc2.start("sudo -S rm -r /home/" + user_name);
+    rmdir_proc1.waitForFinished();
+    rmdir_proc2.waitForFinished();
+
+    return true;
 }
 
 bool User_management::del_the_user(QString &user_name)
 {
-    // Remove the user from the system
+    // First, remove the user_name's home directory
+    if(remove_user_home(user_name)==false) {
+        //QMessageBox::warning(this, "WARNING", "Could not remove the directory: /home/" + user_name + ". Maybe it does not exist!");
+        qDebug() << "Could not remove the directory: /home/" + user_name + ". Maybe it does not exist!";
+    }
+    QMessageBox::information(this, "INFO", "Home directory: /home/" + user_name + " was just removed from the system.");
+    // Remove the user id entry from the system
+    QProcess userdel_proc1, userdel_proc2;
+    userdel_proc1.setStandardOutputProcess(&userdel_proc2);
+    userdel_proc1.start("echo " + user_password);
+    userdel_proc2.start("sudo -S userdel " + user_name);
+    userdel_proc1.waitForFinished();
+    userdel_proc2.waitForFinished();
+    if(userdel_proc2.exitCode()==0) {
+        QMessageBox::information(this, "INFO", "Removed the user: " + user_name + " entry from the system!");
+        return true;
+    }
+    QMessageBox::warning(this, "WARNING", "The user: " + user_name + " entry was not removed from the system!");
     return false;
 }
 
@@ -191,9 +226,12 @@ void User_management::on_user_proceed_pushButton_clicked()
         return;
     }
 
-    if(username.isEmpty() && !user_password.isEmpty()) {
-        qDebug() << "You entered the password, but not the username for the new user that will be created. Please Try again!";
-        QMessageBox::warning(this, "WARNING", "You entered the password, but not the username for the new user that will be created. Please Try again!");
+    // Bug #2 : Explanation
+    // Scenario of Major Frozen System --> When the operator enters his password, but does not provide
+    // the new user to be created user-name , then return/abort procedure in order to try again!
+    if(user_password.isEmpty()) {
+        qDebug() << "Please provide your password. Super-user privileges are required!";
+        QMessageBox::warning(this, "WARNING", "Please provide your password. Super-user privileges are required!");
         return;
     }
 
@@ -205,14 +243,21 @@ void User_management::on_user_proceed_pushButton_clicked()
         // with the appropriate needed actions ::
         qDebug() << "Username " << username.toStdString().c_str() << " is a valid user-name. Proceeding ... \n";
         // Action 1 : Add a user using the useradd command :: Call the useradd function
-        if(ui->useradd_radioButton->isChecked()) {
+        if(ui->useradd_radioButton->isChecked() && check_if_user_exists(username)==false) {
             if(add_the_user(username)==true) {
                 QMessageBox::information(this, "INFO", "New user named : " + username + " was created with success!\n");
-            } else {
-                QMessageBox::information(this, "ERROR", "Something went wrong during user : " + username + " creation!\n");
+                return;
             }
         }
         // Action 2 : Remove the user :: Call the del_the_user() function
+        if(ui->userdel_radioButton->isChecked() && check_if_user_exists(username)==true) {
+            if(del_the_user(username)==true) {
+                return;
+            } else {
+                QMessageBox::warning(this, "WARNING", "The new user: " + username + " failed to be deleted!");
+                return;
+            }
+        }
 
         // Action 3 : Rename the user :: Call the mod_the_user() function
 

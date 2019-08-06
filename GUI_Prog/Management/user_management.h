@@ -20,6 +20,8 @@ public:
 
     QString getUsername() const;
 
+    bool check_if_user_exists(QString &);
+
     // Validate the entered username string
     bool validate_username();
 
@@ -28,6 +30,8 @@ public:
     bool create_user_home(QString &);
 
     bool add_the_user(QString &);
+
+    bool remove_user_home(QString &);
 
     bool del_the_user(QString &);
 
