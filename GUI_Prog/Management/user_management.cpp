@@ -30,13 +30,13 @@ bool User_management::validate_username()
     check_id_proc.waitForFinished();
     if(check_id_proc.exitCode()==0) {
         qDebug() << "This user named: " + check_id_proc.readAllStandardOutput() + " already exists in the system!\n";
-        QMessageBox::information(this, "ERROR", "This user already exists in the system!\n");
+        QMessageBox::warning(this, "WARNING", "This user already exists in the system!\n");
         return false;
     }
 
     // First check if the username QString is empty | Should not be empty of course !
     if(username.isEmpty()) {
-        QMessageBox::information(this, "ERROR", "The username should not be empty!");
+        QMessageBox::warning(this, "WARNING", "The username should not be an empty string!");
         return false;
     }
     // The entered username should not start with next characters or with a number
@@ -54,14 +54,14 @@ bool User_management::validate_username()
     for(auto &invalid_username : invalid_names) {
         if(username==invalid_username) {
             QString error_message = "The username shall not be " + username + "!\nPlease be logical!";
-            QMessageBox::information(this, "ERROR", error_message);
+            QMessageBox::warning(this, "WARNING", error_message);
             return false;
         }
     }
     while(start!=invalid_characters.end()) {
         if(username[0]==*start) {
             QString error_msg = "The username should not begin with the character " + *start + "!\nPlease be logical!\n";
-            QMessageBox::information(this, "ERROR", error_msg);
+            QMessageBox::warning(this, "WARNING", error_msg);
             return false;
         }
         start++;
@@ -188,6 +188,12 @@ void User_management::on_user_proceed_pushButton_clicked()
     if(user_password.isEmpty()) {
         qDebug() << "Please provide " + username + " 's password!\nThese tools need superuser privileges!";
         QMessageBox::information(this, "ERROR", "Please provide " + username + " 's password!\nThese tools need superuser privileges!");
+        return;
+    }
+
+    if(username.isEmpty() && !user_password.isEmpty()) {
+        qDebug() << "You entered the password, but not the username for the new user that will be created. Please Try again!";
+        QMessageBox::warning(this, "WARNING", "You entered the password, but not the username for the new user that will be created. Please Try again!");
         return;
     }
 
