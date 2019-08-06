@@ -27,3 +27,8 @@
 
 
 - [x] Example
+
+* The starting window is appearing as soon the Qt Run button is pressed :
+
+![Start Login Window](https://github.com/dimkatsi91/Cpp-STL-Examples/blob/master/GUI_Prog/Linux_Management/images/Welcome_window.png)
+
