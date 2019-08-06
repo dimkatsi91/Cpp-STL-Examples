@@ -27,8 +27,9 @@ bool User_management::validate_username()
     // Pre-processing Step #0 : Check if an id exists in the system ::
     QProcess check_id_proc;
     check_id_proc.start("grep " + username + " /etc/passwd");
+    check_id_proc.waitForFinished();
     if(check_id_proc.exitCode()==0) {
-        qDebug() << "This user already exists in the system!\n";
+        qDebug() << "This user named: " + check_id_proc.readAllStandardOutput() + " already exists in the system!\n";
         QMessageBox::information(this, "ERROR", "This user already exists in the system!\n");
         return false;
     }
