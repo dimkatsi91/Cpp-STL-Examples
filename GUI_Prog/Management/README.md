@@ -10,7 +10,9 @@
 
 <h5>Work Environment : Ubuntu Linux 18.04 LTS</h5>
 
-<h5>GUI Version      : First Draft, v1.0.1
+<h5>GUI Version      : First Draft, v1.0.1 </h5>
+
+<h5> Update #1       : Linux Management v1.0.3 (Update #1) | 2019, August 06 </h5>
 
 -------------------------------------------------------------------------------------------------------------------------------
 
@@ -43,3 +45,7 @@
  
 - [x] Not yet ready to run properly | 2019, August 05 | Will be implemented soon enough !
 - [x] Update v1.0.2 :: Added the creation of a new User Functionality
+- [x] 2019, August 06 : Fixed three bugs minor and major ones
+- [x] 2019, August 06 : Added the User Removal Functionality when the 'Remove a user' option is entered
+- [x] 2019, August 06 : Added the 'List all users' option functionality ( diplays only human Linux users, not system users! )
+
