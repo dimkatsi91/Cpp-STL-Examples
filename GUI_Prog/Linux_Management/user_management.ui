@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>617</width>
-    <height>390</height>
+    <width>536</width>
+    <height>355</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -79,16 +79,6 @@
      <widget class="QLineEdit" name="new_username_del_lineEdit"/>
     </item>
     <item row="1" column="0">
-     <widget class="QLabel" name="label_4">
-      <property name="text">
-       <string>Enter password :</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QLineEdit" name="new_user_password_del_lineEdit"/>
-    </item>
-    <item row="2" column="0">
      <widget class="QPushButton" name="del_user_pushButton">
       <property name="text">
        <string>REMOVE</string>
@@ -100,35 +90,49 @@
   <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>360</x>
-     <y>60</y>
-     <width>82</width>
-     <height>120</height>
+     <x>340</x>
+     <y>90</y>
+     <width>138</width>
+     <height>182</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout_3">
     <item row="0" column="0">
+     <widget class="QPushButton" name="show_password_pushButton">
+      <property name="text">
+       <string>SHOW PASSWORD</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QPushButton" name="hide_password_pushButton">
+      <property name="text">
+       <string>HIDE PASSWORD</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
      <widget class="QPushButton" name="list_users_pushButton">
       <property name="text">
        <string>List Users</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="0">
-     <widget class="QPushButton" name="clear_pushButton">
-      <property name="text">
-       <string>CLEAR</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
+    <item row="3" column="0">
      <widget class="QPushButton" name="info_pushButton">
       <property name="text">
        <string>INFO</string>
       </property>
      </widget>
     </item>
-    <item row="3" column="0">
+    <item row="4" column="0">
+     <widget class="QPushButton" name="clear_pushButton">
+      <property name="text">
+       <string>CLEAR</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
      <widget class="QPushButton" name="exit_pushButton">
       <property name="text">
        <string>EXIT</string>

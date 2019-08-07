@@ -25,8 +25,19 @@ private slots:
 
     void on_info_pushButton_clicked();
 
+    void on_clear_pushButton_clicked();
+
+    void on_show_password_pushButton_clicked();
+
+    void on_hide_password_pushButton_clicked();
+
 private:
     Ui::User_management *ui;
+    // string variables for username to be added / to be deleted
+    // and the password for the newly created user
+    QString add_username;
+    QString del_username;
+    QString new_user_password;
 };
 
 #endif // USER_MANAGEMENT_H

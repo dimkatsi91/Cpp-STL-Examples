@@ -6,6 +6,8 @@ User_management::User_management(QWidget *parent) :
     ui(new Ui::User_management)
 {
     ui->setupUi(this);
+
+    ui->new_user_password_lineEdit->setEchoMode(QLineEdit::Password);
 }
 
 User_management::~User_management()
@@ -35,4 +37,23 @@ void User_management::on_info_pushButton_clicked()
 {
     QMessageBox::information(this, "Usage Information", "Choose user creation or removal, enter new username and your password and press CREATE | REMOVE button!");
     return;
+}
+
+void User_management::on_clear_pushButton_clicked()
+{
+    ui->new_username_lineEdit->setText("");
+    ui->new_username_del_lineEdit->setText("");
+    ui->new_user_password_lineEdit->setText("");
+    return;
+}
+
+
+void User_management::on_show_password_pushButton_clicked()
+{
+     ui->new_user_password_lineEdit->setEchoMode(QLineEdit::Normal);
+}
+
+void User_management::on_hide_password_pushButton_clicked()
+{
+     ui->new_user_password_lineEdit->setEchoMode(QLineEdit::Password);
 }
