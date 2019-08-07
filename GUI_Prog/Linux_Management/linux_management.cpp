@@ -8,6 +8,12 @@ Linux_Management::Linux_Management(QWidget *parent) :
     ui(new Ui::Linux_Management)
 {
     ui->setupUi(this);
+
+    // When capturing the password do not show the text please :: Security issues
+    // username btw can be shown :: You can change it of course if U would like so
+    ui->username_lineEdit->setEchoMode(QLineEdit::Normal);
+    ui->password_lineEdit->setEchoMode(QLineEdit::Password);
+
     QPixmap user_login_pix("/home/diman91/Documents/QT_Creator/Linux_Management/images/user.svg");
     int w1 = ui->user_login_icon_label->width();
     int h1 = ui->user_login_icon_label->height();
@@ -75,6 +81,7 @@ bool Linux_Management::sanity_check()
     // Capture username & user_password for starters
     setUsername(ui->username_lineEdit->text());
     setUser_password(ui->password_lineEdit->text());
+
     qDebug() << "Username: " << getUsername() << "\nPassword = " << getUser_password() << "\n";
     if(!getUsername().isEmpty() && !getUser_password().isEmpty() && validate_username()==true) {
         return true;
