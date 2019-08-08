@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>915</width>
-    <height>625</height>
+    <width>639</width>
+    <height>491</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,135 +16,15 @@
   <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>180</y>
-     <width>433</width>
-     <height>239</height>
+     <x>60</x>
+     <y>40</y>
+     <width>386</width>
+     <height>133</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout_5">
-    <item row="0" column="0">
-     <widget class="QGroupBox" name="create_new_user_groupBox">
-      <property name="title">
-       <string>Create new user</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="1">
-        <widget class="QLineEdit" name="new_username_lineEdit"/>
-       </item>
-       <item row="2" column="0">
-        <widget class="QPushButton" name="create_user_pushButton">
-         <property name="text">
-          <string>CREATE</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="label_3">
-         <property name="text">
-          <string>Enter password :</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLineEdit" name="new_user_password_lineEdit"/>
-       </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="label_2">
-         <property name="text">
-          <string>Enter username :</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="0" column="1" rowspan="2">
-     <layout class="QGridLayout" name="gridLayout_4">
-      <item row="5" column="0">
-       <widget class="QPushButton" name="clear_pushButton">
-        <property name="text">
-         <string>CLEAR</string>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="0">
-       <widget class="QPushButton" name="exit_pushButton">
-        <property name="text">
-         <string>EXIT</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QPushButton" name="info_pushButton">
-        <property name="text">
-         <string>INFO</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QPushButton" name="hide_password_pushButton">
-        <property name="text">
-         <string>HIDE PASSWORD</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QPushButton" name="list_users_pushButton">
-        <property name="text">
-         <string>List Users</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QPushButton" name="show_password_pushButton">
-        <property name="text">
-         <string>SHOW PASSWORD</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
     <item row="1" column="0">
-     <widget class="QGroupBox" name="create_new_user_groupBox_2">
-      <property name="title">
-       <string>Remove a user</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_3">
-       <item row="0" column="0">
-        <widget class="QLabel" name="label_4">
-         <property name="text">
-          <string>Enter username :</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLineEdit" name="new_username_del_lineEdit"/>
-       </item>
-       <item row="1" column="0">
-        <widget class="QPushButton" name="del_user_pushButton">
-         <property name="text">
-          <string>REMOVE</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>30</y>
-     <width>598</width>
-     <height>102</height>
-    </rect>
-   </property>
-   <layout class="QGridLayout" name="gridLayout_6">
-    <item row="0" column="0">
-     <widget class="QLabel" name="user_login_icon_label">
+     <widget class="QLabel" name="user_pass_login_label">
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
       </property>
@@ -159,12 +39,8 @@
        <string>User Credentials</string>
       </property>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="0" column="0">
-        <widget class="QLabel" name="username_label">
-         <property name="text">
-          <string>Please enter your username :</string>
-         </property>
-        </widget>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="password_lineEdit"/>
        </item>
        <item row="0" column="1">
         <widget class="QLineEdit" name="username_lineEdit"/>
@@ -176,21 +52,25 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="1">
-        <widget class="QLineEdit" name="password_lineEdit"/>
+       <item row="0" column="0">
+        <widget class="QLabel" name="username_label">
+         <property name="text">
+          <string>Please enter your username :</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QCheckBox" name="show_password_checkBox">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
     </item>
-    <item row="0" column="2">
-     <widget class="QPushButton" name="show_current_passwd_pushButton">
-      <property name="text">
-       <string>SHOW CURRENT PASSWORD</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="user_pass_login_label">
+    <item row="0" column="0">
+     <widget class="QLabel" name="user_login_icon_label">
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
       </property>
@@ -199,11 +79,124 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="2">
-     <widget class="QPushButton" name="hide_current_passwd_pushButton">
+    <item row="2" column="1">
+     <widget class="QPushButton" name="pushButton">
       <property name="text">
-       <string>HIDE CURRENT PASSWORD</string>
+       <string>Submit</string>
       </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>220</y>
+     <width>433</width>
+     <height>239</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_6">
+    <item row="0" column="0">
+     <widget class="QGroupBox" name="create_new_user_groupBox">
+      <property name="title">
+       <string>Create new user</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Enter password :</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Enter username :</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="new_user_password_lineEdit"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QPushButton" name="create_user_pushButton">
+         <property name="text">
+          <string>CREATE</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="new_username_lineEdit"/>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="1" rowspan="2">
+     <layout class="QGridLayout" name="gridLayout_4">
+      <item row="0" column="0">
+       <widget class="QPushButton" name="list_users_pushButton">
+        <property name="text">
+         <string>List Users</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QPushButton" name="clear_pushButton">
+        <property name="text">
+         <string>CLEAR</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QPushButton" name="exit_pushButton">
+        <property name="text">
+         <string>EXIT</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QPushButton" name="info_pushButton">
+        <property name="text">
+         <string>INFO</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QCheckBox" name="show_new_password_checkBox">
+        <property name="text">
+         <string>Show</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <widget class="QGroupBox" name="create_new_user_groupBox_2">
+      <property name="title">
+       <string>Remove a user</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="1" column="0">
+        <widget class="QPushButton" name="del_user_pushButton">
+         <property name="text">
+          <string>REMOVE</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>Enter username :</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="new_username_del_lineEdit"/>
+       </item>
+      </layout>
      </widget>
     </item>
    </layout>
