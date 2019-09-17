@@ -14,7 +14,7 @@
 
 -------------------------------------------------------------------------------------------------------------------------------
  
-> #### _Material_ ####
+> ##### _Material_ #####
 
 * [C++ Notes for Professionals](https://books.goalkicker.com/CPlusPlusBook/ "Good Source")
 
@@ -30,3 +30,10 @@
 
 * [ Qt Creator C++ Documentation](https://doc.qt.io/qt-5/qtgui-module.html "Qt (Cute) C++ Documentation")
 
+-------------------------------------------------------------------------------------------------------------------------------
+
+> ##### _Qt (Cute) Creator developed Linux Applications_ #####
+
+* [YoutubeDl_Utility Linux Application](https://github.com/dimkatsi91/YoutubeDl_Utility_v2)
+
+* [Linux Manager Application](https://github.com/dimkatsi91/Manager)
