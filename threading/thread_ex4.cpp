@@ -17,8 +17,6 @@ void echo(atomic<int>& num) {
 
 int main() 
 {
-    // Print all this 20 times to watch that the counter is most-likely different each time, since a few threads 
-    // are faster completed than others
     int i=0;
     while(i<20)
     {
