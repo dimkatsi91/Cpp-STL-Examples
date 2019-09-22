@@ -13,16 +13,19 @@ T cube(T num) {
 int main()
 {
     cout << "Threading using tasks ... \n\n";
-    // vector of 10 tasks
+    // vector of 21 tasks
     vector<future<int>> tasks(21);
     // Sum of cubes
     int sumOfCubes = 0;
+    cout << "sum(";
     for(int i=0; i<21; i++)
     {
         tasks[i] = async(&cube<int>, i);
         sumOfCubes += tasks[i].get();
+        if(i<20)    cout << sumOfCubes;
+        cout << (i<19 ? " + " : "");
     }
-    cout << "Sum(1^3 + 2^3 + 3^3 + ... + 20^3) = " << sumOfCubes << endl;
+    cout << ") = " << sumOfCubes << endl;
 
     return 0;
 }
