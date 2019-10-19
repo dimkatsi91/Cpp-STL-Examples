@@ -55,7 +55,7 @@ string fetch_from_cpuinfo(string search_string)
 int main()
 {
   cout << "CPU Model Name : " << fetch_from_cpuinfo("model name\t:")
-        << "\nCPU Frequency  : " << fetch_from_cpuinfo("cpu MHz\t\t:")
+        << "\nCPU Frequency  : " << fetch_from_cpuinfo("cpu MHz\t\t:")  << " KHz"
         << "\nCPU Cache      : " << fetch_from_cpuinfo("cache size\t:")
         << "\nCPU Cores      : " << fetch_from_cpuinfo("cpu cores\t:")
         << "\nKnown Bugs     : " << fetch_from_cpuinfo("bugs\t\t:")
