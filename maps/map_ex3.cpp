@@ -40,10 +40,10 @@ string find_country(map<x,y> &mp, const string &town)
 {
     // Search for the town named 'town'
     // and return its country
-    typename map<x,y>::iterator origin_country = towns.find(town);
-    if(origin_country != mp.end())
-        return origin_country->second;
-    return "[]";
+    typename map<x,y>::iterator origin_country_itr = mp.find(town);
+    if(origin_country_itr != mp.end())
+        return origin_country_itr->second;
+    return "[ NOT found ]";
 }
 
 
