@@ -24,8 +24,9 @@ public:
         maxElem = *max_element(stack.begin(), stack.end());
         minElem = *min_element(stack.begin(), stack.end());
     }
-    // pop last element from stack
+    // pop element from stack
     void pop() {
+        cout << "\nPoping element " << stack.back() << endl;
         stack.pop_back();
         maxElem = *max_element(stack.begin(), stack.end());
         minElem = *min_element(stack.begin(), stack.end());
@@ -85,14 +86,18 @@ int main()
 {
     dStack<int> st;
     st.push(3);
-    st.printStack();
+    //st.printStack();
     st.push(5);
-    st.printStack();
+    //st.printStack();
     st.push(2);
-    st.printStack();
+    //st.printStack();
     st.push(1);
-    st.printStack();
+    //st.printStack();
     st.push(-1);
+    st.printStack();
+    // pop an element
+    cout << "Pop element ... \n";
+    st.pop();
     st.printStack();
 
     cout << "Erase the stack ...\n ";
@@ -102,5 +107,36 @@ int main()
     return 0;
 }
 
-// Compile like this : g++ map_ex_8.cpp -std=c++17 -o map_ex_8
-// Or make this program with: make map_ex_8 , and get a warning !
+/*  OUTPUT ::
+
+Stack: 3 
+Max element is: 3
+Min element is: 3
+
+Stack: 5 3 
+Max element is: 5
+Min element is: 3
+
+Stack: 2 5 3 
+Max element is: 5
+Min element is: 2
+
+Stack: 1 2 5 3 
+Max element is: 5
+Min element is: 1
+
+Stack: -1 1 2 5 3 
+Max element is: 5
+Min element is: -1
+
+Pop element ... 
+
+Poping element 3
+Stack: -1 1 2 5 
+Max element is: 5
+Min element is: -1
+
+Erase the stack ...
+ 
+Stack is empty ... 
+*/
