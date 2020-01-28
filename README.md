@@ -34,8 +34,13 @@
 
 -------------------------------------------------------------------------------------------------------------------------------
 
-> ##### _Qt (Cute) Creator developed Linux Applications_ #####
+> ##### _Qt (Cute) Widgets Linux Applications_ #####
 
 * [YoutubeDl_Utility Linux Application](https://github.com/dimkatsi91/YoutubeDl_Utility_v2)
 
 * [Linux Manager Application](https://github.com/dimkatsi91/Manager)
+
+
+> ##### _Qt (Cute) Quick Controls 2 Linux Applications_ #####
+
+* [Linux 'Manager_v2' Application](https://github.com/dimkatsi91/Manager_v2)
