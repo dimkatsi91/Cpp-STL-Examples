@@ -32,6 +32,8 @@
 
 * [ Boost Libraries C++ Home Page ](https://www.boost.org/ "C++ Boost Libs")
 
+* [ Design Patterns ](https://sourcemaking.com/design_patterns)
+
 -------------------------------------------------------------------------------------------------------------------------------
 
 > ##### _Qt (Cute) Widgets Linux Applications_ #####
