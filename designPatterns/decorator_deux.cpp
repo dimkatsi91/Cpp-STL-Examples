@@ -16,9 +16,9 @@ public:
 class AnarchyLinux : public Arch {
 //AnarchyLinux() {}    
 public:
-    static AnarchyLinux newEmptyAnarchyLinux() {
-        return {};
-    }
+    //static AnarchyLinux newEmptyAnarchyLinux() {
+    //    return {};
+    //}
     void install() override {
         cout << "Installing Anarchy Linux (based on Arch) ...\n";
     }
