@@ -57,6 +57,8 @@ public:
     }
 };
 
+static int once{-1};
+
 // let's create a team of 5 players only | It is goingto play in 5X5
 //
 class FootballTeam {
@@ -68,10 +70,17 @@ public:
     FootballTeam(vector<PlayerBuilder> players, int squadlen, const string& teamName) 
         : players(players), squadSize(squadlen), name(teamName) 
     {
+        if(once<0) {
+            cout << "**********************************************************\n";
+            cout << "Match type: " << squadSize << " X " << squadSize << endl;
+            cout << "Team Name: " << name << endl;
+            cout << "**********************************************************\n";
+        }
         for(auto &player : players) {
             cout << " Adding a plyer in team: " << name << "\n";
             player.builderInfo();
         }
+        once++;
     }
 };
 
