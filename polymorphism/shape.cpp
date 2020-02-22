@@ -99,7 +99,10 @@ int main() {
 
     // square or maybe circle ??? compiler shall decide regarding this one
     Shape *shape = nullptr;
-    shape = &circle;shape->describe();
+    shape = &circle;
+    shape->describe();
+
+    delete shape;
 
     return 0;
 }
