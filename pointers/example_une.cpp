@@ -32,3 +32,15 @@ int main()
 
     return 0;
 }
+
+/* Sample Output ::
+
+Nums[0] = 1      address --> 6422260
+Nums[1] = 2      address --> 6422264
+Nums[2] = 3      address --> 6422268
+Nums[3] = 4      address --> 6422272
+Nums[4] = 5      address --> 6422276
+
+Distance between 1st and 2nd element is : 4
+
+*/
