@@ -9,13 +9,29 @@ public:
     static Matrix newMatrix(int *arr, int sz) {
         return {arr, sz};
     }
+    // Overload - operator for Objects of type class --> Matrix
+    //
     Matrix operator-(Matrix &rhs) {
         int counter{0};
+        // Create a temp Matrix Object and store the current object's values
+        Matrix tmp = *this;
         while(counter != vec.size()) {
-            this->vec.at(counter) -= rhs.vec.at(counter);
+            tmp.vec.at(counter) = this->vec.at(counter) - rhs.vec.at(counter);
             counter++;
         }
-        return *this;
+        return tmp;
+    }
+    // Overload + operator for Objects of type class --> Matrix
+    //
+    Matrix operator+(Matrix &rhs) {
+        int counter{0};
+        // Create a temp Matrix Object and store the current object's values
+        Matrix tmp = *this;
+        while(counter != vec.size()) {
+            tmp.vec.at(counter) = this->vec.at(counter) + rhs.vec.at(counter);
+            counter++;
+        }
+        return tmp;
     }
     void print() {
         for(int i=0; i<vec.size(); i++) {
@@ -49,8 +65,12 @@ int main()
     cout << "m2 matrix : ";
     m2.print();
 
-    cout << "m2 - m1 = ";
-    Matrix m4 = m2 - m1;
+    cout << "m3 = m2 - m1 = ";
+    Matrix m3 = m2 - m1;
+    m3.print();
+
+    cout << "m4 = m3 + m3 = ";
+    Matrix m4 = m3 + m3;
     m4.print();
 
     return 0;
