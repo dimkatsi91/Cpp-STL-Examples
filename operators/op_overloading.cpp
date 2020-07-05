@@ -33,6 +33,17 @@ public:
         }
         return tmp;
     }
+    // Overload * Operator for Objects of type class --> Matrix
+    //
+    Matrix operator*(int multiplier) {
+        int counter{0};
+        Matrix tmp(*this);
+        while(counter != vec.size()) {
+            tmp.vec.at(counter) *= multiplier;
+            counter++;
+        }
+        return tmp;
+    }
     void print() {
         for(int i=0; i<vec.size(); i++) {
             cout << vec.at(i) << " ";
@@ -72,6 +83,10 @@ int main()
     cout << "m4 = m3 + m3 = ";
     Matrix m4 = m3 + m3;
     m4.print();
+
+    cout << "m5 = m4*2 = ";
+    Matrix m5 = m4*2;
+    m5.print();
 
     return 0;
 }
