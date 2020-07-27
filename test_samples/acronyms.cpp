@@ -1,8 +1,8 @@
 /*
  * Acronyms Test
  *
- * INPUT: [Zone, Improvement, Plan]
- * OUTPUT: Z.I.P.
+ * INPUT: [One, Two, Five]
+ * OUTPUT: O.T.F.
  * 
  */
 #include <iostream>
@@ -33,6 +33,9 @@ int main()
 {
     vector<string> test{"Zone", "Improvement", "Plan"};
     cout << acronym(test) << endl;
+
+    vector<string> test2{"Yet", "Another", "Markup", "Language"};
+    cout << acronym(test2) << endl;
 
     return 0;
 }
