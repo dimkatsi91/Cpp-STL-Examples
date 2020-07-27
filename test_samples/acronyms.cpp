@@ -25,7 +25,10 @@ string acronym(vector<string> input)
         cout << endl;
     }
 
-    return check;
+    //return check;
+    
+    // If you don't want last dot just ::
+    return check.substr(0, check.size()-1);
 }
 
 
