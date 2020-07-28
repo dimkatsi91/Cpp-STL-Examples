@@ -20,9 +20,7 @@ string acronym(vector<string> input)
     {
         string::iterator itr = word.begin();
         check = check + *itr + ".";
-        itr = word.end();
-
-        cout << endl;
+        // itr = word.end();    // oops | no need 
     }
 
     //return check;
@@ -39,6 +37,9 @@ int main()
 
     vector<string> test2{"Yet", "Another", "Markup", "Language"};
     cout << acronym(test2) << endl;
+
+    vector<string> dimkats{"Dimos", "Failes", "In", "Timing"};
+    cout << acronym(dimkats) << endl;
 
     return 0;
 }
