@@ -55,12 +55,13 @@ string is_happy(int num)
             return "sad";
         }
         counter++;
-    }  
+    }
 }
 
 
 int main() 
 {
+    /*
     cout << "32 is ... " << is_happy(32) << endl;
     cout << "7 is ... " << is_happy(7) << endl;
     cout << "28 is ... " << is_happy(28) << endl;
@@ -68,7 +69,33 @@ int main()
     cout << "9 is ... " << is_happy(9) << endl;
     cout << "24 is ... " << is_happy(24) << endl;
     cout << "13 is ... " << is_happy(13) << endl;
-    cout << "16 is ... " << is_happy(16) << endl;
+    */
+    //cout << "16 is ... " << is_happy(16) << endl;
+    int happy_nums_sum=0;
+    for(int i=0; i<101; i++)
+    {
+        if(is_happy(i)=="happy") {
+            happy_nums_sum++;
+            cout << i << " " ;
+        }
+    }
+    cout << endl;
+    cout << "[0-100] --> Happy Numbers = " << happy_nums_sum << endl;
 
     return 0;
 }
+
+
+/* OUTPUT ::
+
+32 is ... happy
+7 is ... happy
+28 is ... happy
+30 is ... sad
+9 is ... sad
+24 is ... sad
+13 is ... happy
+16 is ... sad
+
+*/
+
