@@ -56,6 +56,8 @@ string is_happy(int num)
         }
         counter++;
     }
+    // add this just for the compiler .. !
+    return "sad";
 }
 
 
@@ -76,7 +78,7 @@ int main()
     {
         if(is_happy(i)=="happy") {
             happy_nums_sum++;
-            cout << i << " " ;
+            cout << i << " ";
         }
     }
     cout << endl;
