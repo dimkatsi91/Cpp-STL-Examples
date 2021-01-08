@@ -43,45 +43,58 @@ public:
 //
 class SmartHome {
 public:
+    SmartHome(Lights * lights = nullptr,
+              Firewall * firewall = nullptr,
+              Heat * heat = nullptr)
+        {
+            this->lights = lights ?: new Lights;
+            this->firewall = firewall ?: new Firewall;
+            this->heat = heat ?: new Heat;
+        }
+    ~SmartHome() {
+        delete lights, firewall, heat;
+    }
     // Out Of House Mode includes next Operations
     //
     void OoH_mode() {
-        lights.turn_off();
-        firewall.up();
+        lights->turn_off();
+        firewall->up();
     }
     // In House mode
     //
     void inHouse() {
-        lights.turn_on();
-        firewall.down();
+        lights->turn_on();
+        firewall->down();
     }
     // summer mode
     //
     void summer_mode(int temp) {
-        heat.cold(temp);
+        heat->cold(temp);
     }
     // winter mode
     //
     void winter_mode(int temp) {
-        heat.warm(temp);
+        heat->warm(temp);
     }
 private:
-    Lights lights;
-    Firewall firewall;
-    Heat heat;
+    Lights * lights;
+    Firewall * firewall;
+    Heat * heat;
 };
 
 int main() {
 
-    SmartHome s1;
+    SmartHome * s1 = new SmartHome();
 
-    s1.OoH_mode();
+    s1->OoH_mode();
 
-    s1.inHouse();
+    s1->inHouse();
 
-    s1.winter_mode(27);
+    s1->winter_mode(27);
 
-    s1.winter_mode(9);
+    s1->winter_mode(9);
+
+    free(s1);
 
     return 0;
 }
