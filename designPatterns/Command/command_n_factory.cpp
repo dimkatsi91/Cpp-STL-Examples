@@ -4,7 +4,7 @@
  *                  
  *                     < Behavioral Pattern >
  * 
- * Factory Design Pattern : Use an interface for creating classes
+ * Factory Design Pattern : Use an interface for creating classes' objects
  *                     < Creational Pattern >
  */
 #define _USE_MATH_DEFINES
@@ -141,3 +141,11 @@ int main()
 
     return 0;
 }
+
+/* Sample Output:
+
+    Circle: (1, 1) with Radius: 2.25 
+    Circle Area is : 4.71239
+    Circle Perimeter is : 14.1372
+
+*/
