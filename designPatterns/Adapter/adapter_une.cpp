@@ -97,14 +97,3 @@ int main()
 
     return 0;
 }
-
-/* Sample Output : gdb:
-
-    (gdb) r
-    Starting program: /home/dimkats/Documents/Cpp-STL-Examples/designPatterns/Adapter/adapter_une 
-    Length:		Start: (1, 2) 		End: (3, 4) 		
-    Width:		Start: (1, 2) 		End: (5, 6) 		
-    Height:		Start: (3, 4) 		End: (7, 8) 		
-    [Inferior 1 (process 103610) exited normally]
-
-*/
