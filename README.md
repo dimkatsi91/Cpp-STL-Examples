@@ -40,8 +40,7 @@
 
 > ##### _Qt (Cute) Widgets Linux Applications_ #####
 
-* [YoutubeDl_Utility Linux Application](https://github.com/dimkatsi91/Ytb_Dl_Utility_v2) (also removed after youtube-dl binary first removal attempt)
-
+* [YoutubeDl_Utility Linux Application](https://github.com/dimkatsi91/Ytb_Dl_Utility_v2)
 * [Linux Manager Application](https://github.com/dimkatsi91/Manager)
 
 
