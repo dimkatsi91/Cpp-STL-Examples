@@ -2,11 +2,11 @@
 
 <h5>Title: C++ STL simple Examples for library exploration</h5>
 
-<h5>Author: Dimos Katsimardos</h5>
+<h5>Author: Dimos(thenis) Katsimardos</h5>
 
-<h5>Period: June 2017</h5>
+<h5>Period: juin 2017</h5>
 
-<h5>Last Update: Janvier 2021</h5>
+<h5>Last Update: fevrier 2023</h5>
 
 
 -------------------------------------------------------------------------------------------------------------------------------
