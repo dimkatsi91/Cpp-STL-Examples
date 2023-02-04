@@ -16,6 +16,7 @@ private:
 
 std::ostream& operator<<( std::ostream& os, const Test& test ) {
   os << test.str << "\n";
+  return os;
 }
 
 int main() {
